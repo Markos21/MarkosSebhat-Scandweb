@@ -1,0 +1,17 @@
+<div class="product_list">
+  <ul class="list-group" *ngFor="let item of items">
+    <li class="list-group-item">
+      <input
+        class="form-check-input me-4"
+        type="checkbox"
+        value=""
+        aria-label="..."
+        
+      />
+      <span class="sku">{{ item.sku }}</span> <br />
+      <span class="name">{{ item.name }} </span> <br />
+      <span class="price">{{ item.price }} $</span> <br />
+      <span class="attribute">{{ item.size }}</span>
+    </li>
+  </ul>
+</div>

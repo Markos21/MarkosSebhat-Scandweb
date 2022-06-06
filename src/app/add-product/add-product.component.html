@@ -1,0 +1,137 @@
+<nav class="navbar navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand">Product Add</a>
+    <div class="d-flex">
+      <button
+        class="btn btn-primary"
+        style="margin-left: 19px"
+        (click)="onSubmit()"
+      >
+        Save
+      </button>
+      <a routerLink="" id="delete-product-btn" class="btn btn-danger">
+        Cancel
+      </a>
+    </div>
+  </div>
+</nav>
+<div class="container">
+  <form id="product_form">
+    <div class="form-control">
+      <label for="sku">SKU</label>
+      <input
+        type="text"
+        name="sku"
+        id="sku"
+        [(ngModel)]="sku"
+        placeholder="SKU"
+        required
+      />
+      <br />
+
+      <label for="name">Name</label>
+      <input
+        type="text"
+        name="name"
+        id="name"
+        placeholder="NAME"
+        [(ngModel)]="name"
+        required
+      />
+      <br />
+
+      <label for="price">Price ($)</label>
+      <input
+        type="number"
+        name="price"
+        id="price"
+        [(ngModel)]="price"
+        placeholder="PRICE"
+        required
+        pattern="[0-9]+"
+        title="please enter number only"
+      />
+      <br />
+
+      <label for="productType">Type Switcher</label>
+      <select
+        name="product_Type"
+        id="productType"
+        [(ngModel)]="selectedValue"
+        required
+      >
+        <option value="">Type Switcher</option>
+        <option value="DVD">DVD</option>
+        <option value="Furniture">Furniture</option>
+        <option value="Book">Book</option>
+      </select>
+
+      <div class="form-group" *ngIf="selectedValue == 'DVD'">
+        <label for="name">Size (MB):</label>
+
+        <input
+          type="number"
+          name="size"
+          id="size"
+          [(ngModel)]="size"
+          placeholder="SIZE"
+          required
+        />
+        <br />
+        <span style="margin-right: 15px">Please Provide Size in MB</span>
+      </div>
+
+      <div class="form-group" *ngIf="selectedValue == 'Furniture'">
+        <span>Please Provide dimensions in HxWxL</span> <br />
+        <label for="name">Height (CM):</label>
+
+        <input
+          type="number"
+          [(ngModel)]="height"
+          name="height"
+          id="height"
+          placeholder="HEIGHT"
+          required
+        />
+        <br />
+        <label for="name">Width (CM):</label>
+
+        <input
+          type="number"
+          [(ngModel)]="width"
+          name="width"
+          id="width"
+          placeholder="WIDTH"
+          required
+        />
+        <br />
+        <label for="name">Length (CM):</label>
+
+        <input
+          type="number"
+          [(ngModel)]="length"
+          name="length"
+          id="length"
+          placeholder="LENGTH"
+          required
+        />
+      </div>
+
+      <div class="form-group" *ngIf="selectedValue == 'Book'">
+        <label for="name">Weight (KG):</label>
+        <input
+          type="number"
+          [(ngModel)]="weight"
+          name="weight"
+          id="weight"
+          placeholder="WEIGHT"
+          required
+        />
+        <br />
+        <span style="margin-right: 15px">Please Provide Size in KG</span>
+      </div>
+    </div>
+  </form>
+</div>
+
+<app-footer></app-footer>

@@ -1,0 +1,16 @@
+.btn btn-primary
+{
+    margin-left: 23px;
+}
+label {
+    display: inline-block;
+    text-align: left;
+    width: 150px;
+    line-height: 26px;
+    margin-bottom: 10px;
+  }
+  
+ .container
+ {
+     margin-top: 25px;
+ }
